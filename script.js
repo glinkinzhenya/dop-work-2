@@ -25,51 +25,47 @@ const pets = [
 ];
 
 function renderUsers(arr1, arr2, myFunc) {
-
     let clonArr1 = arr1.slice()
 
     clonArr1.forEach(function(i) {
-
         arr2.forEach(function(j) {
             if (i[0] === j[3]) {
                 i.push(j);
             };
         });
     });
-
     document.write(`<div class="container">${myFunc(clonArr1).join("")}</div>`);
 }
-
-renderUsers(users, pets, getPetAdvertisment);
 
 function getPetAdvertisment(arr) {
 
     let mass = [];
 
     arr.forEach(function(i) {
-
         if (i.length < 4) {
             mass.push(`<div class="person">
- 			                <h1>${i[0]}</h1>
- 			                <p>Возраст: ${i[1]}</p>
- 			                <p>Город: ${i[2]}</p>
-			                <div>
- 				            <img class="image" src="img/car.jpg" alt="">
- 			                </div>
-		                    </div>`);
+		<h1>${i[0]}</h1>
+		<p>Возраст: ${i[1]}</p>
+		<p>Город: ${i[2]}</p>
+		<div>
+		    <img class="image" src="img/car.jpg" alt="">
+		</div>
+	    </div>`);
         } else {
             mass.push(`<div class="person">
- 			                <h1>${i[0]}</h1>
- 			                <p>Возраст: ${i[1]}</p>
- 			                <p>Город: ${i[2]}</p>
- 			                <p>Имя питомца: ${i[3][0]}</p>
-                            <p>Животное: ${i[3][1]}</p>
-                            <p>Порода: ${i[3][2]}</p>
-			                <div>
- 				            <img class="image" src="img/${i[3][1]}.jpg" alt="${(i[4])}">
- 			                </div>
-		                    </div>`);
+		<h1>${i[0]}</h1>
+			<p>Возраст: ${i[1]}</p>
+			<p>Город: ${i[2]}</p>
+			<p>Имя питомца: ${i[3][0]}</p>
+			<p>Животное: ${i[3][1]}</p>
+			<p>Порода: ${i[3][2]}</p>
+		<div>
+		    <img class="image" src="img/${i[3][1]}.jpg" alt="${(i[4])}">
+		</div>
+	    </div>`);
         };
     });
     return mass;
 };
+
+renderUsers(users, pets, getPetAdvertisment);
