@@ -36,7 +36,6 @@ function renderUsers(arr1, arr2, myFunc) {
             };
         });
     });
-    console.log(clonArr1)
 
     document.write(`<div class="container">${myFunc(clonArr1).join("")}</div>`);
 }
